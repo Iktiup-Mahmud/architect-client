@@ -10,9 +10,9 @@ const HeroHome = () => {
                         <img src="https://placeimg.com/260/400/arch" alt='' className="max-w-sm rounded-lg shadow-2xl" />
                     </div>
                     <div>
-                        <h1 className="text-5xl font-bold">I had a great relations with our consumers!</h1>
-                        <p className="py-6">I am highly commited to our customer to give them our best service. And my 95% of customer are happy with my service. So take a trip with Architect.</p>
-                        <Link className="btn btn-info">Get Started</Link>
+                        <h1 className="text-5xl font-bold">I had a great relation with our consumers!</h1>
+                        <p className="py-6">I am highly commited to our customer to give them my best service. And my 95% of customer are happy with my service. So take a trip with Architect.</p>
+                        <Link to='/services' className="btn btn-info">Get Started</Link>
                     </div>
                 </div>
             </div>

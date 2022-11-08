@@ -21,20 +21,21 @@ const Header = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">
+                <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img src="https://i.ibb.co/kVTXyyN/logo.jpg" className='w-12 mr-3' alt="" srcSet="" />
                     <h1> ARCHITECT</h1>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li><a>Item 1</a></li>
-                    <li><Link to='/ami'>Ami</Link></li>
-                    <li><a>Item 3</a></li>
+                    <li><Link to='/home'>Home</Link></li>
+                    <li><Link to='/services'>Services</Link></li>
+                    <li><Link to='/ami'>My Services</Link></li>
+                    <li><Link to='/ami'>Add Review</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn btn-primary">Get started</Link>
+                <Link className="btn btn-primary">Login</Link>
             </div>
         </div>
     );
