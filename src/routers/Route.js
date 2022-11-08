@@ -6,6 +6,8 @@ import Service from "../components/Service/Service";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
 import Page404 from "../components/Page404/Page404";
+import AddServices from "../components/AddServices/AddServices";
+import MyReviews from "../components/MyReviews/MyReviews";
 
 export const Route = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ export const Route = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/myreviews',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/addservices',
+                element: <AddServices></AddServices>
             },
             {
                 path: '/services/:id',

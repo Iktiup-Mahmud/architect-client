@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Form, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Comments from '../Comments/Comments';
 
 const Service = () => {
     const { _id, name, img, description, price, rating } = useLoaderData();
@@ -44,6 +45,7 @@ const Service = () => {
     }
 
 
+
     return (
         <div>
             <h1 className='my-10 font-bold text-3xl text-warning'>Service: {name}</h1>
@@ -83,6 +85,10 @@ const Service = () => {
                     </Form>
                 </div>
             </div>
+            <div>
+                <Comments id={_id}></Comments>
+            </div>
+            
         </div>
     );
 };
