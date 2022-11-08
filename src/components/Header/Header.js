@@ -22,7 +22,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl">
-                    <img src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon--awt-travel-blue-icons--softiconsm-17.png" className='w-12' alt="" srcset="" />
+                    <img src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon--awt-travel-blue-icons--softiconsm-17.png" className='w-12 mr-3' alt="" srcSet="" />
                     <h1> GoTrip</h1>
                 </Link>
             </div>
