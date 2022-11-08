@@ -12,7 +12,7 @@ const Service = () => {
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold text-warning">Service Name: {name}</h2>
                     <p className='font-bold text-left text-warning'>Description:</p>
-                    <p>{description}</p>
+                    <p className='text-left'>{description}</p>
                     <div className="card-actions flex justify-between mt-5">
                         <div className='text-start items-center text-warning font-bold my-auto'>
                             <h1>Price: {price} $</h1>
