@@ -15,13 +15,15 @@ const Service = () => {
         const cusName = form.name.value;
         const email = form.email.value;
         const comment = form.comment.value;
+        const image = user?.photoURL;
 
         const commentInfo = {
             service: _id,
             serviceName: name,
             cusName,
             email,
-            comment
+            comment,
+            image
         }
 
         console.log(commentInfo)
@@ -86,7 +88,7 @@ const Service = () => {
                 </div>
             </div>
             <div>
-                <Comments id={_id}></Comments>
+                <Comments key={_id} id={_id}></Comments>
             </div>
             
         </div>
