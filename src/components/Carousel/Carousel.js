@@ -10,7 +10,7 @@ const Carousel = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-1/3 top-1/3  text-5xl text-slate-300 font-bold">
                         <h1>Hello, <br /> Wellcome to <span className='text-blue-600'>ARCHITECT!</span></h1>
                     </div>
-                    <div className="absolute flex justify-between left-1/2 top-1/2">
+                    <div className="absolute flex justify-between left-1/2  top-1/2">
                         <Link to='/services' className='btn btn-primary'>Get Start ❯</Link>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

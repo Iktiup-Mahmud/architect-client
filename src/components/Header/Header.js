@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handelLogout = () => {
+        logOut()
+            .then(() => console.log('logout successfull'))
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -10,15 +20,10 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li tabIndex={0}>
-                            <a className="justify-between">
-                                Parent
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
-                            
-                        </li>
-                        <li><a>Item 3</a></li>
+                        <li><Link to='/home'>Home</Link></li>
+                        <li><Link to='/services'>Services</Link></li>
+                        <li><Link to='/ami'>My Services</Link></li>
+                        <li><Link to='/ami'>Add Review</Link></li>
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
@@ -35,7 +40,29 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn btn-primary">Login</Link>
+                {
+                    user?.uid ?
+
+                        <div className='flex'>
+                            {
+                                user?.photoURL ?
+                                    <div className='mr-5 flex   ' >
+
+                                        <img title={user?.displayName} alt='' style={{ height: '35px' }} className='my-auto mr-3 rounded-xl' src={user?.photoURL}></img>
+                                    </div>
+                                    :
+                                    <div className='my-auto mr-3'>
+                                        <FaUser className='text-2xl ' title={user?.displayName} />
+                                    </div>
+                            }
+                            <Link onClick={handelLogout} className='btn btn-error'>Logout</Link>
+                        </div>
+
+
+                        :
+
+                        <Link className='btn btn-primary' to='/login'>Login </Link>
+                }
             </div>
         </div>
     );
