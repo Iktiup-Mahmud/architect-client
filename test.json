@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Schematic design",
+        "img": "https://i.ibb.co/48f1RCp/img-11.jpg",
+        "description": "I will provide concept sketches of design options and explain how they meet the requirements discussed in the programming stage. The overall scope of the project, proposed building materials, and a preliminary budget related to the schematic design are also discussed. Refinements are made until you approve the design.I will provide concept sketches of design options and explain how they meet the requirements discussed in the programming stage. The overall scope of the project, proposed building materials, and a preliminary budget related to the schematic design are also discussed. Refinements are made until you approve the design.I will provide concept sketches of design options and explain how they meet the requirements discussed in the programming stage. The overall scope of the project, proposed building materials, and a preliminary budget related to the schematic design are also discussed. Refinements are made until you approve the design.",
+        "price": "50,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+    {
+        "name": "Design development",
+        "img": "https://i.ibb.co/25v303k/img-21.jpg",
+        "description": "I will prepare detailed drawings and finalize the design plans, showing actual sizes and shapes for rooms. Construction specifications will be outlined, listing the major materials to be used. When you approve the design drawings, your architect will work with you to find contractors to give you cost estimates.Your architect will prepare detailed drawings and finalize the design plans, showing actual sizes and shapes for rooms. Construction specifications will be outlined, listing the major materials to be used. When you approve the design drawings, your architect will work with you to find contractors to give you cost estimates.",
+        "price": "70,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+    {
+        "name": "Hiring the contractor",
+        "img": "",
+        "description": "You have several options when it comes to hiring a contractor, including asking your architect to make recommendations or choose a contractor on their own. Your architect can assist you in selecting contractors by reviewing bids and estimates based on the construction documents.You have several options when it comes to hiring a contractor, including asking your architect to make recommendations or choose a contractor on their own. Your architect can assist you in selecting contractors by reviewing bids and estimates based on the construction documents.",
+        "price": "500,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+    {
+        "name": "Construction documents",
+        "img": "https://i.ibb.co/d7JVNvy/img-41.jpg",
+        "description": "One of the most important elements of your architect's services is construction documents. Your architect will develop detailed drawings and material specifications. The contractor will use both to estimate construction costs and to build the project. One of the most important elements of your architect's services is construction documents. Your architect will develop detailed drawings and material specifications. The contractor will use both to estimate construction costs and to build the project.",
+        "price": "100,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+    {
+        "name": "Adaptive Reuse ",
+        "img": "https://i.ibb.co/SxpxGzM/img-51.jpg",
+        "description": "Adaptive Reuse is a rather grand way to describe what historic cities, like Winchester, have been practically implementing on existing structures since the beginning. With every factory-turned-apartments, there was an architect there to guide the property owner in the right direction.Simply put, it is the transformation of existing structures for modern uses. Its a sustainable solution to updating spaces, especially in cities. An added benefit or perhaps the main allure is that adaptive reuse retains and improves the character of historic facades that would otherwise not solicit proper investment or upkeep and results in one-of-a-kind spaces for the client and the community.",
+        "price": "100,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+    {
+        "name": "Construction phase ",
+        "img": "https://i.ibb.co/GT33zVZ/img-61.jpg",
+        "description": "In this phase, your architect observes the pace and quality of construction. As your agent, your architect looks out for your interests, keeping you informed of the project's progress and overseeing any changes or problems that may arise. Construction phase services are helpful in keeping your project on track and within budget.In this phase, your architect observes the pace and quality of construction. As your agent, your architect looks out for your interests, keeping you informed of the project's progress and overseeing any changes or problems that may arise. Construction phase services are helpful in keeping your project on track and within budget.",
+        "price": "100,000",
+        "rating": "4.5/5",
+        "time": "20-30 Days"
+    },
+]

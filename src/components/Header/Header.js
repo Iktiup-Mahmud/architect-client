@@ -22,8 +22,8 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl">
-                    <img src="https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon--awt-travel-blue-icons--softiconsm-17.png" className='w-12 mr-3' alt="" srcSet="" />
-                    <h1> GoTrip</h1>
+                    <img src="https://i.ibb.co/kVTXyyN/logo.jpg" className='w-12 mr-3' alt="" srcSet="" />
+                    <h1> ARCHITECT</h1>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -34,7 +34,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn btn-info">Get started</Link>
+                <Link className="btn btn-primary">Get started</Link>
             </div>
         </div>
     );

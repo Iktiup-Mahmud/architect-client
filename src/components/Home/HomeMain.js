@@ -15,7 +15,7 @@ const HomeMain = () => {
     return (
         <div>
             <div className='my-16'>
-                <h1 className='text-5xl font-bold'>Our Services</h1>
+                <h1 className='text-5xl font-bold'>My Services</h1>
             </div>
             <div className='grid grid-cols-1 px-20 gap-10 lg:grid-cols-3 md:grid-cols-2'>
                 {
