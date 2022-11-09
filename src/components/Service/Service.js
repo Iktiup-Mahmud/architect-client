@@ -52,7 +52,7 @@ const Service = () => {
         <div>
             <h1 className='my-10 font-bold text-3xl text-warning'>Service: {name}</h1>
             <div className="card w-1/2 mx-auto bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Shoes" /></figure>
+                <figure><img src={img} alt="service_img" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold text-warning">Service Name: {name}</h2>
                     <p className='font-bold text-left text-warning'>Description:</p>
