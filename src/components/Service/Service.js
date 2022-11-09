@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Form, useLoaderData } from 'react-router-dom';
+import { Form, Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Comments from '../Comments/Comments';
 
@@ -62,7 +62,7 @@ const Service = () => {
                             <h1>Price: {price} $</h1>
                             <h1>Rating: {rating}</h1>
                         </div>
-                        <button className="btn btn-primary">Details</button>
+                        <Link to='/services' className="btn btn-primary">Go Back </Link>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,10 @@ const Service = () => {
                                 user?.displayName ?
                                 <></>
                                 :
-                                <p className='text-warning'>You need to login first for submiting a comment. </p>
+                                <>
+                                        <p className='text-warning'>You need to login first for submiting a comment. </p>
+                                        <Link className='btn btn-primary' to='/login'>Login</Link>
+                                </>
                             }
                             <button className='btn btn-primary' 
                             disabled={ user?.displayName ? false : true }>Submit</button>

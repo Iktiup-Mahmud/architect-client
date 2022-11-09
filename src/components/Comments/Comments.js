@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 const Comments = ({ id }) => {
     const [review, setReview] = useState([])
-    // const reversed = review.reverse()
 
     useEffect(() => {
         fetch(`http://localhost:5000/comments/${id}`)
@@ -11,7 +10,7 @@ const Comments = ({ id }) => {
                 setReview(data.reverse())
                 // console.log(data.reverse())
             })
-    }, [])
+    }, [id, review])
     
 
     return (
