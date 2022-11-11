@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaAlignJustify } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const MyReviews = () => {
+    const { user } = useContext(AuthContext)
+    const { displayName } = user;
+
+    const [ review, setReview ] = useState([])
+
+    useEffect( () => {
+        fetch('http://localhost:5000/reviewsbyusername', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify( displayName )
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    })
+
+    
+
+
     return (
-        <div className="overflow-x-auto w-4/5 mx-auto mb-20">
+        <div className="overflow-x-auto w-4/5 mx-auto mb-20  min-h-screen">
             <h1 className='text-warning text-5xl font-bold my-10'>My Reviews</h1>
             <table className="table w-full">
                 <thead>
                     <tr>
-                        
+
                         <th>Service Image</th>
                         <th>Service Name</th>
                         <th>Review</th>
                         <th>Action</th>
                     </tr>
                 </thead>
+            {
+                // console.log(user.displayName)
+            }
+
                 <tbody>
                     <tr>
-                        
+
                         <td>
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
@@ -35,19 +61,17 @@ const MyReviews = () => {
                             Zemlak, Daniel and Leannon
                         </td>
                         <td>
-                            <th className='overflow'>
-                                <button className="btn btn-ghost dropdown btn-xs ">
-                                    <FaAlignJustify />
-                                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><Link to='/home'>Edit</Link></li>
-                                        <li className='text-error'><Link to='/services'>Delete</Link></li>
-                                    </ul>
-                                </button>
-                            </th>
-                        </td>
-                        <td>
                             Zemlak, Daniel and Leannon
                         </td>
+                        <th className='overflow'>
+                            <button className="btn btn-ghost dropdown btn-xs ">
+                                <FaAlignJustify />
+                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><Link to='/home'>Edit</Link></li>
+                                    <li className='text-error'><Link to='/services'>Delete</Link></li>
+                                </ul>
+                            </button>
+                        </th>
                     </tr>
                 </tbody>
             </table>

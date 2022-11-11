@@ -27,7 +27,7 @@ const Comments = ({ id }) => {
                                 <div key={cmnt?._id} className='p-5 border rounded-lg mb-5'>
                                     <div className='flex justify-between'>
                                         <p className='font-bold'><span className='text-warning'>Name:</span> {cmnt?.cusName}</p>
-                                        <img src={cmnt?.image} className='rounded-full w-8' title={cmnt?.cusName} alt="" srcset="" />
+                                        <img src={cmnt?.image} className='rounded-full w-8' title={cmnt?.cusName} alt="" srcSet="" />
                                     </div>
                                     <p ><span className='text-warning font-bold'>Review:</span> {cmnt?.comment}</p>
 

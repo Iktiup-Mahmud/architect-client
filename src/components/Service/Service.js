@@ -26,7 +26,7 @@ const Service = () => {
             image
         }
 
-        console.log(commentInfo)
+        // console.log(commentInfo)
         fetch('http://localhost:5000/comments', {
             method: 'POST',
             headers: {

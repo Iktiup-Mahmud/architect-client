@@ -9,6 +9,7 @@ import Page404 from "../components/Page404/Page404";
 import AddServices from "../components/AddServices/AddServices";
 import MyReviews from "../components/MyReviews/MyReviews";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Blog from "../components/Blog/Blog";
 
 export const Route = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const Route = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/myreviews',
