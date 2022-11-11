@@ -6,23 +6,18 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
-    const { displayName } = user;
+    const { email } = user;
+    const [reviews, setReviews] = useState({})
+ 
 
-    const [ review, setReview ] = useState([])
-
-    useEffect( () => {
-        fetch('http://localhost:5000/reviewsbyusername', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify( displayName )
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-    })
-
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviewsbyuser?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setReviews(data)
+            })
+    }, [email])
     
 
 
@@ -31,6 +26,9 @@ const MyReviews = () => {
             <Helmet>
                 <title>My Review</title>
             </Helmet>
+            {
+                // console.log(review)
+            }
             <h1 className='text-warning text-5xl font-bold my-10'>My Reviews</h1>
             <table className="table w-full">
                 <thead>
@@ -42,9 +40,9 @@ const MyReviews = () => {
                         <th>Action</th>
                     </tr>
                 </thead>
-            {
-                // console.log(user.displayName)
-            }
+            {/* {
+                console.log(user.email)
+            } */}
 
                 <tbody>
                     <tr>
