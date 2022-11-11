@@ -1,24 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaAlignJustify } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Reviewrow from './Reviewrow';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
-    const { email } = user;
-    const [reviews, setReviews] = useState({})
- 
+    const [reviews, setReviews] = useState([])
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsbyuser?email=${email}`)
+        fetch(`http://localhost:5000/reviewsbyuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setReviews(data)
             })
-    }, [email])
-    
+    }, [user?.email, user, reviews])
+
+    const handelDelete = id => {
+        const proceed = window.confirm('Are you sure to delete this?')
+        if (proceed) {
+            fetch(`http://localhost:5000/reviewsbyuser/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json)
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        alert('daleted successfull')
+                        const remaining = reviews.filter(rv => rv._id !== id)
+                        setReviews(remaining)
+                    }
+                })
+        }
+    }
+
 
 
     return (
@@ -26,55 +43,23 @@ const MyReviews = () => {
             <Helmet>
                 <title>My Review</title>
             </Helmet>
-            {
-                // console.log(review)
-            }
             <h1 className='text-warning text-5xl font-bold my-10'>My Reviews</h1>
+            <h1 className='font bold text-xl mb-3'>You have {reviews.length} reviews.</h1>
             <table className="table w-full">
                 <thead>
                     <tr>
 
-                        <th>Service Image</th>
-                        <th>Service Name</th>
-                        <th>Review</th>
                         <th>Action</th>
+                        <th>Service Name</th>
+                        <th>Your Review</th>
+
                     </tr>
                 </thead>
-            {/* {
-                console.log(user.email)
-            } */}
 
                 <tbody>
-                    <tr>
-
-                        <td>
-                            <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src="https://i.pinimg.com/736x/37/5a/d3/375ad3e79624f45085d2d76e8bb8ba16--tom-cruise-profile-pictures.jpg" alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Hart Hagerty</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Zemlak, Daniel and Leannon
-                        </td>
-                        <td>
-                            Zemlak, Daniel and Leannon
-                        </td>
-                        <th className='overflow'>
-                            <button className="btn btn-ghost dropdown btn-xs ">
-                                <FaAlignJustify />
-                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><Link to='/home'>Edit</Link></li>
-                                    <li className='text-error'><Link to='/services'>Delete</Link></li>
-                                </ul>
-                            </button>
-                        </th>
-                    </tr>
+                    {
+                        reviews.map(review => <Reviewrow key={review._id} review={review} handelDelete={handelDelete}></Reviewrow>)
+                    }
                 </tbody>
             </table>
         </div>
