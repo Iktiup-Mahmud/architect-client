@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Reviewrow from './Reviewrow';
 
@@ -13,7 +12,7 @@ const MyReviews = () => {
         fetch(`http://localhost:5000/reviewsbyuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setReviews(data)
             })
     }, [user?.email, user, reviews])
@@ -35,6 +34,7 @@ const MyReviews = () => {
                 })
         }
     }
+
 
 
 

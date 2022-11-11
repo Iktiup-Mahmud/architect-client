@@ -4,8 +4,20 @@ const Reviewrow = ({review, handelDelete}) => {
     const {_id, serviceName, comment} = review;
 
 
-    const handelEdit = {
 
+    const handelEdit = (id, e) => {
+
+        const updateF = e.target.updateF.value;
+
+        fetch(`http://localhost:5000/reviewsbyuser/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateF)
+        })
+            .then(res => res.json)
+            .then(data => console.log(data))
     }
 
     
@@ -13,16 +25,13 @@ const Reviewrow = ({review, handelDelete}) => {
     return (
             <tr>
             <th className='flex'>
-                <p onClick={() =>handelDelete(_id)} className='text-error mr-5'>X</p>
-                <p onClick={handelEdit}>Edit</p>
+                <p onClick={() =>handelDelete(_id)} className=' btn btn-error mr-5'>X</p>
+                {/* <p onClick={handelEdit}>Edit</p> */}
+                <label htmlFor="my-modal" className="btn">Edit</label>
             </th>
                 <td>
                     <div className="flex items-center space-x-3">
-                        {/* <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                                <img src="https://i.pinimg.com/736x/37/5a/d3/375ad3e79624f45085d2d76e8bb8ba16--tom-cruise-profile-pictures.jpg" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                        </div> */}
+                        
                         <div>
                             <div className="font-bold">{serviceName}</div>
                         </div>
@@ -31,8 +40,20 @@ const Reviewrow = ({review, handelDelete}) => {
                 <td>
                     {comment}
                 </td>
+
+            <input type="checkbox" id="my-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Update</h3>
+                    <input type="text" placeholder="Type here" name='updateF' className="input input-bordered w-full " />
+                    <div className="modal-action">
+                        <label htmlFor="my-modal" onClick={() => handelEdit(_id)} className="btn">Update!</label>
+                    </div>
+                </div>
+            </div>
                 
             </tr>
+            
     );
 };
 
