@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -65,6 +66,9 @@ const Login = () => {
     
     return (
         <form onSubmit={handelSubmit} className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="hero-content w-full ">
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100 p-20">
                     <h1 className="text-5xl font-bold text-primary">Login now!</h1>

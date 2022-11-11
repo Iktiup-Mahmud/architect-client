@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import toast from 'react-hot-toast';
 import { Form } from 'react-router-dom';
 
@@ -48,6 +49,11 @@ const AddServices = () => {
 
     return (
             <div className="card w-2/3 mx-auto bg-base-100 shadow-xl mt-16 mb-20">
+                <Helmet>
+                    <title>
+                        Add service
+                    </title>
+                </Helmet>
                 <h1 className='font-bold text-primary text-5xl mt-10 mb-5'>Add Service</h1>
                 <Form onSubmit={handelSubmit} className=" text-center w-2/3 card-body mx-auto">
                     <input type="text" name='sName' placeholder="Service name" className="input input-bordered input-ghost" required />

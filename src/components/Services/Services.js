@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
@@ -11,6 +12,11 @@ const Services = () => {
     })
     return (
         <div className='my-16'>
+            <Helmet>
+                <title>
+                    Services
+                </title>
+            </Helmet>
             <h1 className='font-bold text-5xl mb-14 text-primary'>My Services</h1>
             <div className='grid grid-cols-1 px-20 gap-10 lg:grid-cols-3 md:grid-cols-2'>
                 {

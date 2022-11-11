@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -81,6 +82,9 @@ const Signup = () => {
 
     return (
         <Form onSubmit={handelSubmit} className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Signup</title>
+            </Helmet>
             <div className="hero-content w-full ">
                 <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100 py-20 px-8">
                     <h1 className="text-5xl font-bold text-primary">Register now!</h1>

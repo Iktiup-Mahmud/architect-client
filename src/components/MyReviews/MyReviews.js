@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaAlignJustify } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -27,6 +28,9 @@ const MyReviews = () => {
 
     return (
         <div className="overflow-x-auto w-4/5 mx-auto mb-20  min-h-screen">
+            <Helmet>
+                <title>My Review</title>
+            </Helmet>
             <h1 className='text-warning text-5xl font-bold my-10'>My Reviews</h1>
             <table className="table w-full">
                 <thead>
