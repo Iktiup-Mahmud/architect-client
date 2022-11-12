@@ -27,7 +27,7 @@ const Service = () => {
         }
 
         // console.log(commentInfo)
-        fetch('http://localhost:5000/comments', {
+        fetch('https://server-side-orpin.vercel.app/comments', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

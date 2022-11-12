@@ -27,7 +27,7 @@ const AddServices = () => {
 
         console.log(serviceInfo)
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://server-side-orpin.vercel.app/home/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

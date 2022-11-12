@@ -10,6 +10,7 @@ import AddServices from "../components/AddServices/AddServices";
 import MyReviews from "../components/MyReviews/MyReviews";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import Blog from "../components/Blog/Blog";
+import Update from "../components/MyReviews/Update";
 
 
 
@@ -45,7 +46,7 @@ export const Route = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <Service></Service>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-side-orpin.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -54,6 +55,11 @@ export const Route = createBrowserRouter([
             {
                 path: '/regester',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
             }
         ]
     },

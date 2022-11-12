@@ -9,18 +9,18 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsbyuser?email=${user?.email}`)
+        fetch(`https://server-side-orpin.vercel.app/reviewsbyuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
                 setReviews(data)
             })
-    }, [user?.email, user, reviews])
+    }, [user?.email ])
 
     const handelDelete = id => {
         const proceed = window.confirm('Are you sure to delete this?')
         if (proceed) {
-            fetch(`http://localhost:5000/reviewsbyuser/${id}`, {
+            fetch(`https://server-side-orpin.vercel.app/reviewsbyuser/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json)

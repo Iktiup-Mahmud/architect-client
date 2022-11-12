@@ -4,7 +4,7 @@ const Comments = ({ id }) => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/comments/${id}`)
+        fetch(`https://server-side-orpin.vercel.app/comments/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReview(data.reverse())
