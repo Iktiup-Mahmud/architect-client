@@ -15,7 +15,7 @@ const Update = () => {
         console.log({review})
 
         
-        fetch(`http://localhost:5000/update/${data._id}`, {
+        fetch(`https://server-side-orpin.vercel.app/update/${data._id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

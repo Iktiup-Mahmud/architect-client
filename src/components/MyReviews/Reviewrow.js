@@ -13,7 +13,7 @@ const Reviewrow = ({ review, handelDelete }) => {
     //     const updateF = inputRef.current.value;
     //     console.log(updateF)
 
-    //     fetch(`http://localhost:5000/reviewsbyuser/${id}`, {
+    //     fetch(`https://server-side-orpin.vercel.app/reviewsbyuser/${id}`, {
     //         method: 'PATCH',
     //         headers: {
     //             'content-type': 'application/json'

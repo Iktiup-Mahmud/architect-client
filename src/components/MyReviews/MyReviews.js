@@ -9,13 +9,13 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`https://server-side-orpin.vercel.app/reviewsbyuser?email=${user?.email}`)
+        fetch(`https://server-side-orpin.vercel.app/reviewsbyuser?displayName=${user?.displayName}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
                 setReviews(data)
             })
-    }, [user?.email ])
+    }, [user?.displayName, reviews ])
 
     const handelDelete = id => {
         const proceed = window.confirm('Are you sure to delete this?')
@@ -35,14 +35,17 @@ const MyReviews = () => {
         }
     }
 
-
-
-
     return (
         <div className="overflow-x-auto w-4/5 mx-auto mb-20  min-h-screen">
             <Helmet>
                 <title>My Review</title>
             </Helmet>
+            {
+                // console.log(user.email)
+            }
+            {
+                // console.log(user.displayName)
+            }
             <h1 className='text-warning text-5xl font-bold my-10'>My Reviews</h1>
             <h1 className='font bold text-xl mb-3'>You have {reviews.length} reviews.</h1>
             <table className="table w-full">

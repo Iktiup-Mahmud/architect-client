@@ -27,7 +27,7 @@ const AddServices = () => {
 
         console.log(serviceInfo)
 
-        fetch('https://server-side-orpin.vercel.app/home/services', {
+        fetch('https://server-side-orpin.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,23 +48,23 @@ const AddServices = () => {
     }
 
     return (
-            <div className="card w-2/3 mx-auto bg-base-100 shadow-xl mt-16 mb-20">
-                <Helmet>
-                    <title>
-                        Add service
-                    </title>
-                </Helmet>
-                <h1 className='font-bold text-primary text-5xl mt-10 mb-5'>Add Service</h1>
-                <Form onSubmit={handelSubmit} className=" text-center w-2/3 card-body mx-auto">
-                    <input type="text" name='sName' placeholder="Service name" className="input input-bordered input-ghost" required />
-                    <input type="text" name='img' placeholder="Image URL" className="input input-bordered input-ghost " required />
-                    <input type="text" name='price' placeholder="Price" className="input input-bordered input-ghost" required />
-                    <input type="text" name='time' placeholder="Time" className="input input-bordered input-ghost" />
-                    <input type="text" name='rating' placeholder="Rating" className="input input-bordered input-ghost" />
-                    <textarea name='description' className="textarea h-32 textarea-ghost border-x-lime-50" placeholder="Details" required></textarea>
-                    <button className='btn btn-primary my-5'>Add Service</button>
-                </Form>
-            </div>
+        <div className="card w-2/3 mx-auto bg-base-100 shadow-xl mt-16 mb-20">
+            <Helmet>
+                <title>
+                    Add service
+                </title>
+            </Helmet>
+            <h1 className='font-bold text-primary text-5xl mt-10 mb-5'>Add Service</h1>
+            <Form onSubmit={handelSubmit} className=" text-center w-2/3 card-body mx-auto">
+                <input type="text" name='sName' placeholder="Service name" className="input input-bordered input-ghost" required />
+                <input type="text" name='img' placeholder="Image URL" className="input input-bordered input-ghost " required />
+                <input type="text" name='price' placeholder="Price" className="input input-bordered input-ghost" required />
+                <input type="text" name='time' placeholder="Time" className="input input-bordered input-ghost" />
+                <input type="text" name='rating' placeholder="Rating" className="input input-bordered input-ghost" />
+                <textarea name='description' className="textarea h-32 textarea-ghost border-x-lime-50" placeholder="Details" required></textarea>
+                <button className='btn btn-primary my-5'>Add Service</button>
+            </Form>
+        </div>
     );
 };
 

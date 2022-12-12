@@ -4,6 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
@@ -34,6 +35,7 @@ const Login = () => {
             })
             .catch(error => {
                 setError(error.message)
+                toast.error('Some thing went wrong')
                 console.error(error)
             })
     }
