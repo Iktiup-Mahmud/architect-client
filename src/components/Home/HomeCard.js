@@ -24,7 +24,7 @@ const HomeCard = ({service}) => {
                                 description
                         }</p>
                         <div className="card-actions justify-end">
-                            <p className='text-start items-center text-warning font-bold my-auto'>Price: {price}$</p>
+                            <p className='text-start items-center text-success font-bold my-auto'>Price: {price}$</p>
                             <Link to={`/services/${_id}`} className="btn btn-primary">Check Details</Link>
                         </div>
                     </div>
