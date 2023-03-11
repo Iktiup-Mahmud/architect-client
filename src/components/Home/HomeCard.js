@@ -8,7 +8,7 @@ const HomeCard = ({service}) => {
 
     return (
         <div>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card bg-base-200 border-r-2 border-b-2 rounded-lg  shadow-xl">
                 <PhotoProvider>
                     <PhotoView key={_id} src={img}>
                         <figure><img src={img} alt="" style={{ objectFit: 'cover' }} /></figure>

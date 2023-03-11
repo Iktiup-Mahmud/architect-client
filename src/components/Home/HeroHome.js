@@ -11,8 +11,8 @@ const HeroHome = () => {
                     </div>
                     <div className='lg:text-left'>
                         <div className="badge badge-primary mb-3">Customer Relation</div>
-                        <h1 className="text-5xl font-bold">I had a great relation with our consumers!</h1>
-                        <p className="py-6">I am highly commited to our customer to give them my best service. And my 95% of customer are happy with my service. So take a trip with Architect.</p>
+                        <h1 className="text-5xl font-bold">We had a great relation with our consumers!</h1>
+                        <p className="py-6">We are highly commited to our customer to give them my best service. And our 95% of customer are happy with my service. So take a trip with Architect.</p>
                         <Link to='/services' className="btn btn-success mr-5">Get Started</Link>
                         <Link to='/blog' className="btn btn-primary">Blogs</Link>
                     </div>

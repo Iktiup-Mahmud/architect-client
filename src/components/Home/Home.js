@@ -5,6 +5,7 @@ import HomeLast from './HeroHome';
 import HomeContact from './HomeContact';
 import HomeExtra from './HomeExtra';
 import HomeMain from './HomeMain';
+import Sponsore from './Sponsore';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Carousel></Carousel>
             <HomeMain></HomeMain>
             <HomeLast></HomeLast>
+            <Sponsore></Sponsore>
             <HomeExtra></HomeExtra>
             <HomeContact></HomeContact>
         </div>
